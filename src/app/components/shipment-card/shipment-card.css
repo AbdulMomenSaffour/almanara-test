@@ -35,12 +35,14 @@
 .payment {
   color: #6688b0;
   margin-left: 0.5rem;
+  white-space: nowrap;
 }
 
 .status-container {
   border: 1px dashed #004392;
   border-radius: 16px;
-  padding: 1rem 2rem;
+  padding: 1rem;
+  padding-left: 60px
 }
 .play-now {
   background-color: #e4462e;
@@ -48,9 +50,10 @@
   border: none;
   border-radius: 5px;
   margin-left: 0.5rem;
+  white-space: nowrap;
 }
 .status {
-  left: -36px;
+  left: -16px;
   background-color: #c5dce8;
   border-radius: 10px;
   padding: 0.35rem;
