@@ -44,13 +44,14 @@
   padding: 1rem;
   padding-left: 60px;
 }
-.play-now {
+.pay-now {
   background-color: #e4462e;
   color: white;
   border: none;
   border-radius: 5px;
   margin-left: 0.5rem;
   white-space: nowrap;
+  text-transform: capitalize;
 }
 .status {
   left: -16px;
@@ -64,6 +65,7 @@
   font-size: 0.75rem;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: #004392;
 }
 .expand-toggle span {
   display: inline-block;
@@ -211,12 +213,10 @@ hr {
 }
 
 .divider {
-  height: 1px;
-  background: #e6eef5;
+  height: 0.2px;
+  background: #c5dce8;
   margin-top: 15px;
 }
-
-/* ================= ACTIVE ================= */
 
 .timeline-item.active .stage-title {
   color: #e4462e;
@@ -233,8 +233,6 @@ hr {
 .timeline-item.active .stage-date {
   color: #6688b0;
 }
-
-/* ================= DISABLED ================= */
 
 .timeline-item.disabled .stage-title {
   color: #c5dce8;

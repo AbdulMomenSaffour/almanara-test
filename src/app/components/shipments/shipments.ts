@@ -11,5 +11,5 @@ import { ShipmentCard } from '../shipment-card/shipment-card';
   styleUrl: './shipments.css',
 })
 export class Shipments {
-  @Input() shipments!: Shipment[];
+  @Input() groupedShipments!: { date: string; shipments: Shipment[] }[];
 }

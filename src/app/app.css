@@ -13,19 +13,16 @@
   font-size: 1.5rem;
 }
 
-/* Hover Effect */
 .filter-item:hover {
   color: #004392;
   transform: translateY(-2px);
 }
 
-/* Active */
 .filter-item.active {
   color: #004392;
   font-weight: 600;
 }
 
-/* Separator */
 .separator {
   margin: 0 10px;
   color: #6688b0;
@@ -54,7 +51,6 @@
   transition: all 0.3s ease;
 }
 
-/* Active State */
 .toggle-btn.active {
   background: #e4462e;
   color: #fff;
@@ -67,14 +63,14 @@
   width: 100%;
   border: 1px solid #004392;
   border-radius: 16px;
-  padding: 1rem 1rem 1rem 3rem; /* مساحة للأيقونة يسار */
+  padding: 1rem 1rem 1rem 3rem;
   outline: none;
   transition: all 0.3s ease;
   background-color: transparent;
 }
 .search-input::placeholder {
   color: #6688b0;
-  opacity: 1; /* لتجنب تأثير opacity الافتراضي */
+  opacity: 1;
 }
 .search-input:focus {
   box-shadow: 0 0 0 3px rgba(0, 67, 146, 0.15);
@@ -97,7 +93,7 @@
   width: fit-content;
 }
 .page-item {
-  padding: 12px 8px;
+  padding: 12px;
   font-size: 14px;
   font-weight: 500;
   color: #6c7a89;

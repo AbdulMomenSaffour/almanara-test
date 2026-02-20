@@ -1,1 +1,11 @@
-<app-shipment-card *ngFor="let shipment of shipments" [shipment]="shipment"></app-shipment-card>
+<div *ngFor="let group of groupedShipments">
+
+    <h6 class="mb-3 group-date">
+        {{ group.date | date:'MMM d, y' }}
+    </h6>
+
+    <app-shipment-card *ngFor="let shipment of group.shipments" [shipment]="shipment">
+    </app-shipment-card>
+
+
+</div>

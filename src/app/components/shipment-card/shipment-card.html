@@ -64,7 +64,7 @@
                 src="images/status.svg" alt="">
             <p class="m-0">Status</p>
         </div>
-        <button *ngIf="isPaymentRequired" class="play-now px-3 ">Play Now</button>
+        <button *ngIf="isPaymentRequired" class="pay-now px-3 ">pay Now</button>
         <span [ngClass]="{
     'transit': shipment.status === 'Transit, Kuwait',
     'prep': shipment.status === 'In-Preparation',
@@ -102,9 +102,9 @@
     </div>
     <!-- shipment's details -->
     <div class="ex-shipments-details p-3">
-        <div class="d-flex">
+        <div class="d-flex gap-3 w-50">
             <span class="details-title">Order ID</span>
-            <img src="" alt="">
+            <img src="images/pen.svg" alt="" width="14" height="14">
         </div>
 
         <div>
@@ -212,7 +212,7 @@
             class="position-relative d-flex align-items-center status-container mb-3">
             <div class="position-absolute status"><span class="pe-1"><img src="images/status.svg" alt=""></span>Status
             </div>
-            <button *ngIf="isPaymentRequired" class="play-now px-3 ">Play Now</button>
+            <button *ngIf="isPaymentRequired" class="pay-now px-3 ">pay Now</button>
             <span [ngClass]="{
     'transit': shipment.status === 'Transit, Kuwait',
     'prep': shipment.status === 'In-Preparation',

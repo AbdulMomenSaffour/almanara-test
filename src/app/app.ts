@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Shipments } from './components/shipments/shipments';
@@ -16,8 +16,11 @@ import { Footer } from './components/footer/footer';
   styleUrl: './app.css',
 })
 export class App {
+  ngOnInit() {
+    this.updateGroupedShipments();
+  }
   title: string = 'almananra-test';
-
+  groupedShipments: { date: string; shipments: Shipment[] }[] = [];
   shipments: Shipment[] = shipments;
   filteredShipments: Shipment[] = shipments;
   searchTerm: string = '';
@@ -35,6 +38,7 @@ export class App {
       );
     }
     this.currentPage = 1;
+    this.updateGroupedShipments();
   }
 
   // pagination
@@ -52,15 +56,36 @@ export class App {
 
   changePage(page: number) {
     this.currentPage = page;
+    this.updateGroupedShipments();
   }
   goToPrevious() {
     if (this.currentPage > 1) {
       this.currentPage--;
+      this.updateGroupedShipments();
     }
   }
   goToNext() {
     if (this.currentPage < this.totalPages) {
       this.currentPage++;
+      this.updateGroupedShipments();
     }
+  }
+  updateGroupedShipments() {
+    const grouped: { [key: string]: Shipment[] } = {};
+
+    this.paginatedShipments.forEach((shipment) => {
+      const dateKey = shipment.shipmentDate.toISOString().split('T')[0];
+
+      if (!grouped[dateKey]) {
+        grouped[dateKey] = [];
+      }
+
+      grouped[dateKey].push(shipment);
+    });
+
+    this.groupedShipments = Object.keys(grouped).map((date) => ({
+      date,
+      shipments: grouped[date],
+    }));
   }
 }

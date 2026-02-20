@@ -25,23 +25,10 @@ export class ShipmentCard {
   isExpanded = false;
 
   toggleExpand() {
+    console.log(this.isExpanded + "1");
     this.isExpanded = !this.isExpanded;
+    console.log(this.isExpanded + "2");
   }
-
-  // latestStageDate!: number;
-
-  // ngOnInit() {
-  //   this.setLatestStage(this.shipment.tracking);
-  // }
-
-  // setLatestStage(tracking: any[]) {
-  //   if (!tracking || tracking.length === 0) return;
-
-  //   // 1️⃣ جيب أكبر تاريخ
-  //   this.latestStageDate = Math.max(
-  //     ...tracking.map((stage) => new Date(stage.stageDateTime).getTime()),
-  //   );
-  // }
 
   shipmentTrackingWithTimestamp: any[] = [];
   latestStageTimestamp!: number;
