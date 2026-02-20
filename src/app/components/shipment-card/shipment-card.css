@@ -87,11 +87,14 @@
 .see-all-orders-container button,
 .comment {
   background-color: #004392;
-  color: white;
   border-radius: 8px;
   border: none;
+  color: #fff;
   box-shadow: 0px 4px 20px 0px #00439242;
-  font-size: 12px;
+ font-size: 12px;
+}
+.comment>button{
+ font-size: 12px;
 }
 .dimension {
   background-color: #c5dce8;
