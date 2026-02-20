@@ -1,0 +1,121 @@
+.general-filter {
+  font-weight: 500;
+  font-size: 15px;
+  background-color: #c5dce8;
+}
+
+.filter-item {
+  color: #6688b0;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  font-size: 1.5rem;
+}
+
+/* Hover Effect */
+.filter-item:hover {
+  color: #004392;
+  transform: translateY(-2px);
+}
+
+/* Active */
+.filter-item.active {
+  color: #004392;
+  font-weight: 600;
+}
+
+/* Separator */
+.separator {
+  margin: 0 10px;
+  color: #6688b0;
+}
+
+.filter-title {
+  color: #004392;
+  font-size: 2rem;
+}
+
+.shipment-toggle {
+  display: inline-flex;
+  background: #c5dce8;
+  border-radius: 12px;
+  padding: 4px;
+}
+
+.toggle-btn {
+  border: none;
+  background: transparent;
+  color: #6688b0;
+  padding: 6px 18px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Active State */
+.toggle-btn.active {
+  background: #e4462e;
+  color: #fff;
+}
+.search-wrapper {
+  position: relative;
+  width: 100%;
+}
+.search-input {
+  width: 100%;
+  border: 1px solid #004392;
+  border-radius: 16px;
+  padding: 1rem 1rem 1rem 3rem; /* مساحة للأيقونة يسار */
+  outline: none;
+  transition: all 0.3s ease;
+  background-color: transparent;
+}
+.search-input::placeholder {
+  color: #6688b0;
+  opacity: 1; /* لتجنب تأثير opacity الافتراضي */
+}
+.search-input:focus {
+  box-shadow: 0 0 0 3px rgba(0, 67, 146, 0.15);
+}
+.search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+}
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #adc3e9;
+  border-radius: 8px;
+  width: fit-content;
+}
+.page-item {
+  padding: 12px 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6c7a89;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #afc4e5;
+  transition: 0.2s ease;
+}
+.page-item:last-child {
+  border-right: none;
+}
+.page-item.active {
+  color: #0e4c92;
+  background-color: #e0e9ee;
+  font-weight: 600;
+}
+.page-item.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}

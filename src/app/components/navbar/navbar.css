@@ -1,0 +1,15 @@
+.nav-link{
+    color: #004392;
+    font-weight: 500;
+}
+.my-address{
+    border: 1px solid #3C699E;
+    color: #3C699E;
+    font-weight: 500;
+}
+.user{
+    border: none;
+    background-color: #C5DCE8;
+    color: #004392;
+    font-weight: 500;
+}

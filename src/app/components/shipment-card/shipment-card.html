@@ -1,0 +1,253 @@
+<div *ngIf="!isExpanded" class="shipment-card d-flex align-items-center justify-content-between mb-4 py-2 px-3 ">
+    <!-- shipment's image and order id -->
+    <div class="d-flex align-items-center ">
+        <div class="shipment-img">
+            <img [src]="shipment.image" alt="" class="img-fluid">
+        </div>
+        <div>
+            <span class="details-title">Order ID</span>
+            <br>
+            <span class="order-id">{{shipment.orderId}}</span>
+        </div>
+    </div>
+
+    <!-- shipment's details -->
+
+    <div class="d-flex align-items-center justify-content-between gap-5 w-50">
+        <div class="w-25">
+            <span class="details-title">No of Orders</span>
+            <br>
+            <span class="no-of-orders">{{shipment.noOfOrders}}</span>
+        </div>
+        <div class="w-25">
+            <span class="details-title">Weight</span>
+            <br>
+            <span class="order-weight">{{shipment.weight}} kg</span>
+        </div>
+        <div class="w-25">
+            <span class="details-title">Delivered Time</span>
+            <br>
+            <span class="delivered-time">{{ shipment.deliveredTime | date:'dd MMM - hh:mm' | uppercase }}</span>
+        </div>
+        <div class="w-25">
+            <span class="details-title">Notes</span>
+            <br>
+            <span class="notes">
+                {{ shipment.notes?.[0]
+                ? (shipment.notes[0].length > 10
+                ? (shipment.notes[0] | slice:0:10) + '...'
+                : shipment.notes[0])
+                : '' }}
+            </span>
+        </div>
+
+
+
+    </div>
+
+    <!-- shipment's status -->
+
+
+    <!-- if shipment's status is transit -->
+    <div *ngIf="isTransit" class="d-flex w-25">
+        <img src="images/Avatar.svg" class="search-icon" alt="search" />
+        <span [ngClass]="{
+    'transit': shipment.status === 'Transit, Kuwait',
+    'prep': shipment.status === 'In-Preparation',
+    'payment': shipment.status === 'Payment Required'
+  }">{{shipment.status}}</span>
+    </div>
+    <!-- if shipment's status is preparation or payment required-->
+    <div *ngIf="isPreparation || isPaymentRequired"
+        class="position-relative d-flex align-items-center status-container w-25 ">
+        <div class="position-absolute status d-flex align-items-center justify-content-between gap-1"><img src="images/status.svg" alt=""><p class="m-0">Status</p></div>
+        <button *ngIf="isPaymentRequired" class="play-now px-3 ">Play Now</button>
+        <span [ngClass]="{
+    'transit': shipment.status === 'Transit, Kuwait',
+    'prep': shipment.status === 'In-Preparation',
+    'payment': shipment.status === 'Payment Required'
+  }">{{shipment.status}}</span>
+    </div>
+
+
+    <!-- السهم لفتح/غلق الكارت -->
+    <div class="expand-toggle d-flex justify-content-center mt-2">
+        <button class="btn btn-link p-0" (click)="toggleExpand()">
+            <span [ngClass]="{'rotate': isExpanded}"><img src="images/chevron-down.svg" alt=""></span>
+        </button>
+    </div>
+
+</div>
+
+
+
+
+<!--===================================== Expanded Card ===================================== -->
+
+
+
+
+
+<div *ngIf="isExpanded" class="shipment-card d-flex justify-content-between mb-4 py-2 px-3 ">
+    <!-- shipment's image -->
+    <div>
+        <img [src]="shipment.image" alt="" class="img-fluid">
+        <div class="ps-3 d-flex align-items-center justify-content-between see-all-orders-container">
+            <span class="ex-no-of-orders">{{shipment.noOfOrders}} Orders</span>
+            <button class="py-1 px-3">See All Orders</button>
+        </div>
+    </div>
+    <!-- shipment's details -->
+    <div class="ex-shipments-details p-3">
+        <div class="d-flex">
+            <span class="details-title">Order ID</span>
+            <img src="" alt="">
+        </div>
+
+        <div>
+            <span class="order-id">{{shipment.orderId}}</span>
+        </div>
+
+        <div class="d-flex align-items-center gap-4">
+            <div>
+                <span class="details-title">Weight</span>
+                <br>
+                <span class="no-of-orders">{{shipment.weight}} kg</span>
+            </div>
+            <div>
+                <span class="details-title">Delivered Time </span>
+                <br>
+                <span class="delivered-time">{{ shipment.deliveredTime | date:'dd MMM - hh:mm' | uppercase }}</span>
+            </div>
+        </div>
+
+        <div>
+            <span class="details-title">Dimensions</span>
+            <br>
+            <div class="d-flex align-items-center justify-content-between gap-2">
+                <span class="dimension">L.{{shipment.dimensions.L }} cm</span>
+                <span class="dimension">W.{{shipment.dimensions.W }} cm</span>
+                <span class="dimension">H.{{shipment.dimensions.H }} cm</span>
+            </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-4">
+            <div>
+                <span class="details-title">Company</span>
+                <br>
+                <span class="company">{{shipment.company}}</span>
+            </div>
+            <div>
+                <span class="details-title">Issue Date</span>
+                <br>
+                <span class="delivered-time">{{ shipment.issueDate | date:'dd MMM , yyyy' | uppercase }}</span>
+            </div>
+        </div>
+
+        <hr>
+
+        <span class="receiver-info">Receiver Information</span>
+        <div>
+            <span class="details-title">Name</span>
+            <br>
+            <span class="receiver-name">{{shipment.receiver.name}}</span>
+        </div>
+        <div class="d-flex align-items-center gap-4">
+            <div>
+                <span class="details-title">Phone Number</span>
+                <br>
+                <span class="receiver-phone">{{shipment.receiver.phone}}</span>
+            </div>
+            <div>
+                <span class="details-title">City</span>
+                <br>
+                <span class="receiver-city">{{ shipment.receiver.city}}</span>
+            </div>
+
+        </div>
+        <div>
+            <span class="details-title">Issue Date</span>
+            <br>
+            <span class="receiver-address">{{shipment.receiver.address}}</span>
+        </div>
+
+    </div>
+
+    <!-- shipment's notes -->
+    <div class="d-flex flex-column align-items justify-content-between">
+        <div>
+            <span class="details-title">Notes</span>
+            <div class="notes-container mb-2 w-75" *ngFor="let note of shipment.notes">
+                {{note}}
+            </div>
+        </div>
+        <div class="comment-container">
+            <input type="text" placeholder="Have any comments" />
+            <button class="py-1 px-3 comment">Comment</button>
+        </div>
+    </div>
+
+    <!-- shipments's tracking & status -->
+    <div>
+
+        <!-- shipment's status -->
+        <!-- if shipment's status is transit -->
+        <div *ngIf="isTransit" class="d-flex mb-3 ">
+            <img src="images/Avatar.svg" class="search-icon" alt="search" />
+            <span [ngClass]="{
+    'transit': shipment.status === 'Transit, Kuwait',
+    'prep': shipment.status === 'In-Preparation',
+    'payment': shipment.status === 'Payment Required'
+  }">{{shipment.status}}</span>
+        </div>
+
+        <!-- if shipment's status is preparation or payment required-->
+        <div *ngIf="isPreparation || isPaymentRequired"
+            class="position-relative d-flex align-items-center status-container mb-3">
+            <div class="position-absolute status"><span class="pe-1"><img src="images/status.svg" alt=""></span>Status
+            </div>
+            <button *ngIf="isPaymentRequired" class="play-now px-3 ">Play Now</button>
+            <span [ngClass]="{
+    'transit': shipment.status === 'Transit, Kuwait',
+    'prep': shipment.status === 'In-Preparation',
+    'payment': shipment.status === 'Payment Required'
+  }">{{shipment.status}}</span>
+        </div>
+
+        <!-- shipment's tracking -->
+
+        <div class="timeline-card">
+            <div class="timeline-item" *ngFor="let stage of shipmentTrackingWithTimestamp" [ngClass]="{
+    active: stage.timestamp === latestStageTimestamp,
+    disabled: stage.timestamp !== latestStageTimestamp
+  }">
+                <div class="timeline-left">
+                    <div class="vertical-line"></div>
+                    <div class="check-icon">
+                        <i class="bi bi-check-circle-fill"></i>
+                    </div>
+                </div>
+
+                <div class="timeline-content">
+                    <div class="stage-title">{{ stage.stageName }}</div>
+
+                    <div class="stage-date">
+                        {{ stage.stageDateTime | date: 'MMM d, y' }}
+                        <span class="time">
+                            {{ stage.stageDateTime | date: 'hh:mm a' }}
+                        </span>
+                    </div>
+
+                    <div class="divider"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- السهم لفتح/غلق الكارت -->
+    <div class="expand-toggle d-flex justify-content-center align-self-start mt-2">
+        <button class="btn btn-link p-0" (click)="toggleExpand()">
+            <span [ngClass]="{'rotate': isExpanded}"><img src="images/chevron-down.svg" alt=""></span>
+        </button>
+    </div>
+</div>

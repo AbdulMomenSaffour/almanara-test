@@ -1,0 +1,16 @@
+.footer {
+  display: flex;
+  background-color: #e0e9ee;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer-menu-title {
+  color: #004392;
+}
+.footer-menu-links {
+  color: #004392;
+}
+.copyright {
+  color: #004392;
+}

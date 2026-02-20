@@ -1,0 +1,251 @@
+.shipment-card {
+  border: 2px solid #004392;
+  border-radius: 24px;
+}
+
+.shipment-img img {
+  max-width: 92px;
+  object-fit: cover;
+}
+.details-title {
+  color: #6688b0;
+  font-size: 0.75rem;
+}
+.order-id {
+  color: #004392;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.no-of-orders {
+  color: #e4462e;
+  font-weight: 700;
+}
+.order-weight,
+.delivered-time {
+  color: #004392;
+  font-size: 0.75rem;
+}
+.transit {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #e4462e;
+}
+
+.prep,
+.payment {
+  color: #6688b0;
+  margin-left: 0.5rem;
+}
+
+.status-container {
+  border: 1px dashed #004392;
+  border-radius: 16px;
+  padding: 1rem 2rem;
+}
+.play-now {
+  background-color: #e4462e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-left: 0.5rem;
+}
+.status {
+  left: -36px;
+  background-color: #c5dce8;
+  border-radius: 10px;
+  padding: 0.35rem;
+  color: #004392;
+}
+.notes {
+  display: block; /* مهم */
+  font-size: 0.75rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.expand-toggle span {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  font-size: 1.2rem;
+}
+
+.expand-toggle span.rotate {
+  transform: rotate(180deg);
+}
+
+.see-all-orders-container {
+  background-color: #c5dce8;
+  border-radius: 8px;
+}
+.ex-shipments-details {
+  background-color: #e0e9ee;
+  border-radius: 8px;
+}
+.ex-no-of-orders {
+  color: #004392;
+  font-size: 12px;
+}
+.see-all-orders-container button,
+.comment {
+  background-color: #004392;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0px 4px 20px 0px #00439242;
+  font-size: 12px;
+}
+.dimension {
+  background-color: #c5dce8;
+  border-radius: 4px;
+  color: #004392;
+  font-size: 12px;
+  padding: 0rem 0.5rem;
+}
+.company {
+  color: #004392;
+  font-size: 0.75rem;
+}
+hr {
+  color: #6688b0;
+}
+.receiver-info {
+  color: #004392;
+  font-size: 18px;
+  font-weight: 700;
+}
+.receiver-name,
+.receiver-phone,
+.receiver-city,
+.receiver-address {
+  color: #6688b0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.notes-container {
+  padding: 0.5rem;
+  border-radius: 8px;
+  color: #004392;
+  font-size: 0.75rem;
+}
+
+.notes-container:nth-child(odd) {
+  background-color: #e0e9ee;
+}
+
+.notes-container:nth-child(even) {
+  background-color: #c5dce8;
+}
+.comment-container {
+  background-color: white;
+  border-radius: 8px;
+}
+.comment-container input {
+  border: none;
+  border-radius: 8px;
+}
+.comment-container input::placeholder {
+  color: #c5dce8;
+  font-size: 0.75rem;
+}
+
+.timeline-card {
+  background: #e0e9ee;
+  padding: 30px;
+  border-radius: 30px;
+  position: relative;
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.timeline-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.vertical-line {
+  /* position: absolute; */
+  /* top: 32%;
+  left: 5%;
+  transform: translateX(-50%); */
+  width: 3px;
+  height: 80%;
+  background: #c5dce8;
+}
+
+.check-icon {
+  /* position: relative; */
+  /* background: #fff;
+  z-index: 2; */
+}
+
+.check-icon i {
+  font-size: 14px;
+  color: #6688b0;
+}
+
+.timeline-content {
+  flex: 1;
+  padding-left: 15px;
+}
+
+.stage-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.stage-date {
+  font-size: 14px;
+}
+
+.stage-date .time {
+  margin-left: 20px;
+}
+
+.divider {
+  height: 1px;
+  background: #e6eef5;
+  margin-top: 15px;
+}
+
+/* ================= ACTIVE ================= */
+
+.timeline-item.active .stage-title {
+  color: #e4462e;
+}
+
+.timeline-item.active .vertical-line {
+  background: #e4462e;
+}
+
+.timeline-item.active .check-icon i {
+  color: #e4462e;
+}
+
+.timeline-item.active .stage-date {
+  color: #6688b0;
+}
+
+/* ================= DISABLED ================= */
+
+.timeline-item.disabled .stage-title {
+  color: #c5dce8;
+}
+
+.timeline-item.disabled .stage-date {
+  color: #c5dce8;
+}
+
+.timeline-item.disabled .vertical-line {
+  background: #c5dce8;
+}
+
+.timeline-item.disabled .check-icon i {
+  color: #6688b0;
+}
