@@ -42,7 +42,7 @@
   border: 1px dashed #004392;
   border-radius: 16px;
   padding: 1rem;
-  padding-left: 60px
+  padding-left: 60px;
 }
 .play-now {
   background-color: #e4462e;
@@ -60,7 +60,7 @@
   color: #004392;
 }
 .notes {
-  display: block; /* مهم */
+  display: block;
   font-size: 0.75rem;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -94,10 +94,10 @@
   border: none;
   color: #fff;
   box-shadow: 0px 4px 20px 0px #00439242;
- font-size: 12px;
+  font-size: 12px;
 }
-.comment>button{
- font-size: 12px;
+.comment > button {
+  font-size: 12px;
 }
 .dimension {
   background-color: #c5dce8;
@@ -148,6 +148,12 @@ hr {
 .comment-container input {
   border: none;
   border-radius: 8px;
+  padding: 0rem 1rem;
+}
+.comment-container input:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
 }
 .comment-container input::placeholder {
   color: #c5dce8;
@@ -175,19 +181,9 @@ hr {
 }
 
 .vertical-line {
-  /* position: absolute; */
-  /* top: 32%;
-  left: 5%;
-  transform: translateX(-50%); */
   width: 3px;
   height: 80%;
   background: #c5dce8;
-}
-
-.check-icon {
-  /* position: relative; */
-  /* background: #fff;
-  z-index: 2; */
 }
 
 .check-icon i {

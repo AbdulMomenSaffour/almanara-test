@@ -11,35 +11,20 @@ import { Footer } from './components/footer/footer';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CommonModule, Shipments, Navbar, FormsModule , Footer],
+  imports: [RouterOutlet, CommonModule, Shipments, Navbar, FormsModule, Footer],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
 export class App {
   title: string = 'almananra-test';
 
-  shipments: Shipment[] = shipments; // البيانات الأصلية
-  filteredShipments: Shipment[] = shipments; // المعروضة حالياً
+  shipments: Shipment[] = shipments;
+  filteredShipments: Shipment[] = shipments;
   searchTerm: string = '';
 
-  // onSearch() {
-  //   const term = this.searchTerm.toLowerCase().trim();
-
-  //   if (!term) {
-  //     this.filteredShipments = this.shipments;
-  //     return;
-  //   }
-
-  //   this.filteredShipments = this.shipments.filter(
-  //     (shipment) =>
-  //       shipment.orderId.toLowerCase().includes(term) ||
-  //       shipment.deliveredTime.toDateString().toLowerCase().includes(term),
-  //   );
-  // }
-
+  // search
   onSearch() {
     const term = this.searchTerm.toLowerCase().trim();
-
     if (!term) {
       this.filteredShipments = this.shipments;
     } else {
@@ -49,7 +34,6 @@ export class App {
           shipment.deliveredTime.toDateString().toLowerCase().includes(term),
       );
     }
-
     this.currentPage = 1;
   }
 

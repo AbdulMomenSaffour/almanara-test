@@ -60,7 +60,10 @@
     <!-- if shipment's status is preparation or payment required-->
     <div *ngIf="isPreparation || isPaymentRequired"
         class="position-relative d-flex align-items-center status-container w-25 ">
-        <div class="position-absolute status d-flex align-items-center justify-content-between gap-1"><img src="images/status.svg" alt=""><p class="m-0">Status</p></div>
+        <div class="position-absolute status d-flex align-items-center justify-content-between gap-1"><img
+                src="images/status.svg" alt="">
+            <p class="m-0">Status</p>
+        </div>
         <button *ngIf="isPaymentRequired" class="play-now px-3 ">Play Now</button>
         <span [ngClass]="{
     'transit': shipment.status === 'Transit, Kuwait',
@@ -70,7 +73,7 @@
     </div>
 
 
-    <!-- السهم لفتح/غلق الكارت -->
+    <!-- arrow to open/close cart-->
     <div class="expand-toggle d-flex justify-content-center mt-2">
         <button class="btn btn-link p-0" (click)="toggleExpand()">
             <span [ngClass]="{'rotate': isExpanded}"><img src="images/chevron-down.svg" alt=""></span>
@@ -185,7 +188,7 @@
             <input type="text" placeholder="Have any comments" />
             <div class="d-flex gap-2 align-items-center px-2 comment">
                 <button class="btn text-white py-1 px-1">Comment</button>
-                <img src="images/message-icon.svg" width="16"/>
+                <img src="images/message-icon.svg" width="16" />
             </div>
         </div>
     </div>
@@ -247,7 +250,7 @@
         </div>
     </div>
 
-    <!-- السهم لفتح/غلق الكارت -->
+    <!-- arrow to open/close cart-->
     <div class="expand-toggle d-flex justify-content-center align-self-start mt-2">
         <button class="btn btn-link p-0" (click)="toggleExpand()">
             <span [ngClass]="{'rotate': isExpanded}"><img src="images/chevron-down.svg" alt=""></span>

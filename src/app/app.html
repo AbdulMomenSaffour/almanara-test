@@ -1,10 +1,11 @@
 <div class="container pb-5">
 
+  <!-- Navbar -->
   <app-navbar></app-navbar>
 
 
   <!-- General filter : I assumed that “My shipments” is the active item. -->
-  <div class="general-filter d-flex align-items-center justify-content-evenly py-3 rounded-5 my-5">
+  <div class="general-filter d-flex align-items-center justify-content-evenly py-3  my-5">
     <div class="filter-item">Box Locker</div>
     <div class="separator"><img src="images/right.svg" alt=""></div>
     <div class="filter-item">Shipping Box</div>
@@ -23,7 +24,7 @@
     </div>
   </div>
 
-  <!-- ----------------------------------------------------------------------------------- -->
+  <!-- ------------------------------------Search Field---------------------------------------------- -->
 
   <div class="search-wrapper mb-5">
     <img src="images/SearchOutlined.svg" class="search-icon" alt="search" />
@@ -31,7 +32,7 @@
       (input)="onSearch()" />
   </div>
 
-  <!-- ----------------------------------------------------------------------------------- -->
+  <!-- ------------------------------------All Shipments---------------------------------------------- -->
   <app-shipments [shipments]="paginatedShipments"></app-shipments>
 
 
@@ -54,9 +55,7 @@
     </div>
 
   </div>
-
-
-
-  
 </div>
+
+<!-- Footer -->
 <app-footer></app-footer>
